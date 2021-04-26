@@ -73,6 +73,15 @@ def main():
     # Download vanilla server core
     tools.download_server_jar(os.path.join(here, 'server', 'server.jar'), answers['mcversion'])
 
+    # Download and install Fabric
+    tools.download_fabric_installer(os.path.join(here, 'server', 'fabric-installer.jar'))
+    print('Installing Fabric Loader...')
+    os.chdir(os.path.join(here, 'server'))
+    cmd = 'java -jar {} -mcversion {} nogui'.format('fabric-installer.jar', answers['mcversion'])
+    print(cmd, os.getcwd())
+    os.system(cmd)
+    os.chdir(here)
+
     print('Copying default server.properties to the server folder...')
     with open(os.path.join(here, 'server', 'server.properties'), 'w+') as f:
         f.write(constants.DEFAULT_SERVER_PROPERTIES)
@@ -80,7 +89,10 @@ def main():
     # Edit MCDR config file
     print('Editing MCDR config file...')
     mcdr_config_file = os.path.join(here, 'config.yml')
-    tools.replace_in_file(mcdr_config_file, 'minecraft_server', 'server')    # Replace server core file in run command
+    if answers['fabric']:
+        tools.replace_in_file(mcdr_config_file, 'minecraft_server', 'fabric-server-launch')  # Replace server core file in run command
+    else:
+        tools.replace_in_file(mcdr_config_file, 'minecraft_server', 'server')    # Replace server core file in run command
 
     if more_options.MCDR_LANG_ZH_CN in more:
         tools.replace_in_file(mcdr_config_file, 'en_us', 'zh_cn')
