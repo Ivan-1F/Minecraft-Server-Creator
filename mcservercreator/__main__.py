@@ -8,7 +8,7 @@ import inquirer
 import os
 from pip._internal.cli.main import main as pipmain
 
-from mcservercreator import constant
+from mcservercreator import constants
 from mcservercreator.utils import tools
 from mcservercreator.utils import more_options
 from mcservercreator.utils.properties_parser import Properties
@@ -19,7 +19,7 @@ Thanks for using {0}!
 {2} is open source, u can find it here: {3}
 {2} is still under development, it may not work well
 If u find any bug, please report it in the github issue
-'''.format(constant.FULL_NAME, constant.VERSION, constant.SHORT_NAME, constant.GITHUB_REPO)
+'''.format(constants.FULL_NAME, constants.VERSION, constants.SHORT_NAME, constants.GITHUB_REPO)
 
 def print_info():
     print(info)

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import os
 import re
 
-from mcservercreator import constant
+from mcservercreator import constants
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -13,12 +13,12 @@ print('REQUIRED = {}'.format(REQUIRED))
 
 
 setup(
-    name=constant.PACKAGE_NAME,
-    version=constant.VERSION,
-    description=constant.DESCRIPTION,
-    author=constant.AUTHOR,
+    name=constants.PACKAGE_NAME,
+    version=constants.VERSION,
+    description=constants.DESCRIPTION,
+    author=constants.AUTHOR,
     python_requires='>=3.6.0',
-    url=constant.GITHUB_REPO,
+    url=constants.GITHUB_REPO,
     packages=find_packages(),
     install_requires=REQUIRED,
     include_package_data=True,

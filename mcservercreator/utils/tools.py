@@ -3,10 +3,10 @@ import json
 from progress.bar import Bar
 import pkg_resources
 
-from mcservercreator import constant
+from mcservercreator import constants
 
 def get_all_versions_info():
-    return json.loads(requests.get(constant.VERSION_API).text)
+    return json.loads(requests.get(constants.VERSION_API).text)
 
 # ['20w46a', '20w45a', '1.16.4', '1.16.4-rc1', '1.16.4-pre2', ...]
 def get_all_versions_id():
@@ -53,7 +53,7 @@ def download_server_jar(path: str, mc_version: str):
 
 def download_fabric_installer(path: str):
     with open(path, "wb") as f:
-        response = requests.get(constant.FABRIC_URL, stream=True)
+        response = requests.get(constants.FABRIC_URL, stream=True)
         total_length = response.headers.get('content-length')
         total_length = int(total_length)
         with Bar('Downloading fabric installer', max=total_length) as bar:
