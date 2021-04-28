@@ -77,8 +77,8 @@ def main():
     tools.download_fabric_installer(os.path.join(here, 'server', 'fabric-installer.jar'))
     print('Installing Fabric Loader...')
     os.chdir(os.path.join(here, 'server'))
-    cmd = 'java -jar {} -mcversion {} nogui'.format('fabric-installer.jar', answers['mcversion'])
-    print(cmd, os.getcwd())
+    cmd = 'java -jar {} server -mcversion {} nogui'.format('fabric-installer.jar', answers['mcversion'])
+    # print(cmd, os.getcwd())
     os.system(cmd)
     os.chdir(here)
 
