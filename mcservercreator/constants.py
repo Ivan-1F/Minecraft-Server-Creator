@@ -3,7 +3,7 @@ SHORT_NAME = 'MCSC'
 PACKAGE_NAME = 'mcservercreator'
 DESCRIPTION = 'A tool to help you create and manage minecraft servers easier'
 AUTHOR = 'Ivan1F'
-VERSION = '0.1.0'
+VERSION = '1.0.0'
 GITHUB_REPO = 'https://github.com/Ivan1F/MinecraftServerCreator'
 
 VERSION_API = 'https://launchermeta.mojang.com/mc/game/version_manifest.json'
