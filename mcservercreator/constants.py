@@ -7,7 +7,7 @@ VERSION = '0.1.0'
 GITHUB_REPO = 'https://github.com/Ivan1F/MinecraftServerCreator'
 
 VERSION_API = 'https://launchermeta.mojang.com/mc/game/version_manifest.json'
-FABRIC_URL = 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.7.2/fabric-installer-0.7.2.jar'
+FABRIC_URL = 'https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.7.3/fabric-installer-0.7.3.jar'
 
 DEFAULT_SERVER_PROPERTIES = '''spawn-protection=16
 max-tick-time=60000
